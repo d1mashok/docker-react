@@ -1,0 +1,12 @@
+FROM node:alpine
+
+RUN mkdir -p /app/node_modules/.cache && chown -R node:node /app/node_modules/.cache
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# If using docker-compose with volume mapping, can comment out COPY 
+COPY . .
+
+CMD ["npm", "run", "start"]
