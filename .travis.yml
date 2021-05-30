@@ -1,6 +1,7 @@
-language: generic 
-
+# fixing parse error
 sudo: required
+language: generic
+
 services:
   - docker
 
